@@ -1,5 +1,5 @@
 var eventEmmitter = require('events');
-var utils = require('./utils/utils');
+var utils = require('./utils');
 
 var Emitter = new eventEmmitter.EventEmitter();
 Emitter.setMaxListeners(0);
@@ -18,7 +18,7 @@ var event_names = [];
 
 
 
-function setEvent(){
+function set_event(){
 	var args = arguments;
 	console.log(args);
 	switch(args.length){
@@ -135,7 +135,7 @@ function setEvent(){
 	}
 }
 
-function triggerEvent(){
+function trigger_event(){
 	var args = arguments
 	switch(args.length){
 		case 0:
@@ -144,6 +144,7 @@ function triggerEvent(){
 		case 1:
 			if(utils.is_string(args[0])){
 				// the user just passed in an event without data to be manipulated on
+				// eventish.trigger_event('my_event');
 				var event = args[0]
 				if(utils.check_event(event_names,event)){
 					Emitter.emit(event);
@@ -151,6 +152,7 @@ function triggerEvent(){
 			}
 			else if(utils.is_array(args[0])){
 				// array of events to be triggered on after the other;
+				// eventish.trigger_event(['event1','event2','event3'])
 				var events = args[0];
 				// we would check if they are all strings;
 				var are_strings = events.every(function(event){
@@ -177,6 +179,7 @@ function triggerEvent(){
 			}
 			else if(utils.is_object(args[0])){
 				// object of events and their corresponding data values on emit;
+				// eventish.trigger_event({event1:{name:'ajah'}, event2:['apples','oranges'], event3:'ajah'})
 				var events = Object.keys(args[0]);
 				events.forEach(function(event){
 					if(utils.check_event(event_names,event)){
@@ -192,6 +195,7 @@ function triggerEvent(){
 			}
 		case 2:
 			if(utils.is_string(args[0])){
+				// eventish.trigger_event('event1',{name:'ajah'})
 				var event = args[0];
 				if(utils.check_event(event_names,event)){
 					var event_data = args[1];
@@ -210,6 +214,6 @@ function triggerEvent(){
 }
 
 module.exports = {
-	setEvent:setEvent,
-	triggerEvent:triggerEvent,
+	set_event:set_event,
+	trigger_event:trigger_event,
 };

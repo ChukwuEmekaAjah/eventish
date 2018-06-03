@@ -1,6 +1,6 @@
 {
   "name": "eventish",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A flexible wrapper over NodeJS raw events emitter API.",
   "main": "index.js",
   "repository": {
@@ -19,5 +19,5 @@
   "bugs": {
     "url": "https://github.com/ChukwuEmekaAjah/eventish/issues"
   },
-  "homepage": "https://github.com/ChukwuEmekaAjah/eventish#readme",
+  "homepage": "https://github.com/ChukwuEmekaAjah/eventish#readme"
 }
