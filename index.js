@@ -1,5 +1,5 @@
 var eventEmmitter = require('events');
-var utils = require('./utils');
+var utils = require('./utils/utils');
 
 var Emitter = new eventEmmitter.EventEmitter();
 Emitter.setMaxListeners(0);
