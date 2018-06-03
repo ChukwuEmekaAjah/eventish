@@ -1,0 +1,23 @@
+{
+  "name": "eventish",
+  "version": "1.0.0",
+  "description": "A flexible wrapper over NodeJS raw events emitter API.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChukwuEmekaAjah/eventish.git"
+  },
+  "keywords": [
+    "events",
+    "listeners",
+    "handlers",
+    "trigger",
+    "set"
+  ],
+  "author": "Ajah Chukwuemeka <talk2ajah@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChukwuEmekaAjah/eventish/issues"
+  },
+  "homepage": "https://github.com/ChukwuEmekaAjah/eventish#readme",
+}
